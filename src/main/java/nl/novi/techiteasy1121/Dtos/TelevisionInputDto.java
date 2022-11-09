@@ -1,5 +1,7 @@
 package nl.novi.techiteasy1121.Dtos;
 
+// Deze klasse wordt gebruikt voor je Post en Put methodes, dus daar waar je een Television als body mee geeft in Postman.
+
 public class TelevisionInputDto {
 
         private String type;
@@ -19,24 +21,8 @@ public class TelevisionInputDto {
         private Integer originalStock;
         private Integer sold;
 
-        public TelevisionInputDto(String type, String brand, String name, Double price, Double availableSize, Double refreshRate, String screenType, String screenQuality, Boolean smartTv, Boolean wifi, Boolean voiceControl, Boolean hdr, Boolean bluetooth, Boolean ambiLight, Integer originalStock, Integer sold) {
-            this.type = type;
-            this.brand = brand;
-            this.name = name;
-            this.price = price;
-            this.availableSize = availableSize;
-            this.refreshRate = refreshRate;
-            this.screenType = screenType;
-            this.screenQuality = screenQuality;
-            this.smartTv = smartTv;
-            this.wifi = wifi;
-            this.voiceControl = voiceControl;
-            this.hdr = hdr;
-            this.bluetooth = bluetooth;
-            this.ambiLight = ambiLight;
-            this.originalStock = originalStock;
-            this.sold = sold;
-        }
+        // We hebben geen constrctor nodig. We zullen nooit zelf een TelevisionInputDto maken met die constructor,
+        // alleen Spring/Jackson doet dat en die doet dat aan de hand van de setters, niet de constructor.
 
         public String getType() {
             return type;
