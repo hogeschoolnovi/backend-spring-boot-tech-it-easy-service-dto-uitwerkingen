@@ -42,6 +42,12 @@
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
+<!--        Deze dependency is nodig voor het valideren van je DTO's-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>2.7.5</version>
+        </dependency>
     </dependencies>
 
     <build>
