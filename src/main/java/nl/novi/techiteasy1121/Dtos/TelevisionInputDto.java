@@ -1,12 +1,19 @@
 package nl.novi.techiteasy1121.Dtos;
 
+// Let er op dat je hier uit het "javax" package importeert
+import javax.validation.constraints.*;
+
 // Deze klasse wordt gebruikt voor je Post en Put methodes, dus daar waar je een Television als body mee geeft in Postman.
 
 public class TelevisionInputDto {
 
+        @NotNull(message = "Type is required") // Type moet ingevuld verplicht worden in je JSON, je krijgt een message als je dit niet doet.
         private String type;
+        @NotNull(message = "Brand is required")
         private String brand;
+        @Size(max = 20, message = "Name must be between 0-20 characters") // maximale lengte van de string, min is automatisch 0.
         private String name;
+        @Positive(message = "Price must be higher than zero")
         private Double price;
         private Double availableSize;
         private Double refreshRate;
@@ -15,9 +22,11 @@ public class TelevisionInputDto {
         private Boolean smartTv;
         private Boolean wifi;
         private Boolean voiceControl;
+        @AssertTrue(message = "All television must be hdr minimum")
         private Boolean hdr;
         private Boolean bluetooth;
         private Boolean ambiLight;
+        @PositiveOrZero(message = "Television cannot have negative stock")
         private Integer originalStock;
         private Integer sold;
 
