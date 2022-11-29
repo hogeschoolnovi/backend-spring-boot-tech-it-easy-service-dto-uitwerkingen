@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,7 +58,7 @@ public class TelevisionController {
     // Het is niet verplicht om een "outputdto" en een "inputdto" te hebben, zeker omdat ze in dit geval hetzelfde zijn,
     // maar we willen jullie laten zien dat het mogelijk is. In sommige gevallen kan het zelfs nodig zijn.
     @PostMapping("/televisions")
-    public ResponseEntity<TelevisionDto> addTelevision(@RequestBody TelevisionInputDto televisionInputDto) {
+    public ResponseEntity<TelevisionDto> addTelevision(@Valid @RequestBody TelevisionInputDto televisionInputDto) {
 
         // Hier gebruiken we weer een service methode in plaats van direct de repository aan te spreken.
         TelevisionDto dto = televisionService.addTelevision(televisionInputDto);
@@ -81,7 +82,7 @@ public class TelevisionController {
     // Deze methode returned nu een ResponseEntity<TelevisionDto> in plaats van een ResponseEntity<Television> en deze
     // methode vraagt nu om een Long en een TelevisionInputDto in de parameters in plaats van een Long en een Television.
     @PutMapping("/televisions/{id}")
-    public ResponseEntity<TelevisionDto> updateTelevision(@PathVariable Long id, @RequestBody TelevisionInputDto newTelevision) {
+    public ResponseEntity<TelevisionDto> updateTelevision(@PathVariable Long id, @Valid @RequestBody TelevisionInputDto newTelevision) {
 
         // Hier gebruiken we weer een service methode in plaats van direct de repository aan te spreken.
         // Alle logica die hier eerst stond, is nu ook verplaatst naar de service laag.
