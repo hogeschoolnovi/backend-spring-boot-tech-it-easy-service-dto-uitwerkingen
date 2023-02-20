@@ -1,7 +1,7 @@
 package nl.novi.techiteasy1121.Dtos;
 
-// Let er op dat je hier uit het "javax" package importeert
-import javax.validation.constraints.*;
+// Let er op dat je hier uit het "jakarta" package importeert
+import jakarta.validation.constraints.*;
 
 // Deze klasse wordt gebruikt voor je Post en Put methodes, dus daar waar je een Television als body mee geeft in Postman.
 

@@ -1,6 +1,6 @@
 package nl.novi.techiteasy1121.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class Television {
