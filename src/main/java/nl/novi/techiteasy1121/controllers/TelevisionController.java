@@ -2,6 +2,7 @@ package nl.novi.techiteasy1121.controllers;
 
 import nl.novi.techiteasy1121.Dtos.TelevisionDto;
 import nl.novi.techiteasy1121.Dtos.TelevisionInputDto;
+import nl.novi.techiteasy1121.Dtos.TelevisionSalesDto;
 import nl.novi.techiteasy1121.services.TelevisionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -89,6 +90,12 @@ public class TelevisionController {
         TelevisionDto dto = televisionService.updateTelevision(id, newTelevision);
 
         return ResponseEntity.ok().body(dto);
+    }
+
+    // Bonus opdracht:
+    @GetMapping("televisions/sales")
+    public ResponseEntity<List<TelevisionSalesDto>> getAllTelevisionSalesInfo(){
+        return ResponseEntity.ok(televisionService.getAllTelevisionSalesInfo());
     }
 
 }

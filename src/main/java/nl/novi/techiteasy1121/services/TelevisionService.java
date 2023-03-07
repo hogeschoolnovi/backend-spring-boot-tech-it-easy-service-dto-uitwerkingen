@@ -2,6 +2,7 @@ package nl.novi.techiteasy1121.services;
 
 import nl.novi.techiteasy1121.Dtos.TelevisionDto;
 import nl.novi.techiteasy1121.Dtos.TelevisionInputDto;
+import nl.novi.techiteasy1121.Dtos.TelevisionSalesDto;
 import nl.novi.techiteasy1121.exceptions.RecordNotFoundException;
 import nl.novi.techiteasy1121.models.Television;
 import nl.novi.techiteasy1121.repositories.TelevisionRepository;
@@ -119,6 +120,29 @@ public class TelevisionService {
 
         }
 
+    }
+
+    // Bonus opdracht:
+    public List<TelevisionSalesDto> getAllTelevisionSalesInfo(){
+        //haal alle televisions uit de database
+        List<Television> televisions = televisionRepository.findAll();
+        //maak een lege dto lijst die we kunnen gaan vullen
+        List<TelevisionSalesDto> sales = new ArrayList<>();
+
+        // loop door de television lijst heen om uit elke television de sales info te extraheren en dat in een salesdto te zetten.
+        for(Television t : televisions){
+            // maak een nieuw dto object
+            TelevisionSalesDto dto = new TelevisionSalesDto();
+            // vul de dto
+            dto.setId(t.getId());
+            dto.setPrice(t.getPrice());
+            dto.setSold(t.getSold());
+            dto.setOriginalStock(t.getOriginalStock());
+            //voeg de lijst
+            sales.add(dto);
+        }
+        //return de dto lijst
+        return sales;
     }
 
     // Dit is de vertaal methode van TelevisionInputDto naar Television.
