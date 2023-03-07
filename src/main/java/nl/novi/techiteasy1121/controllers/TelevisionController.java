@@ -17,7 +17,7 @@ public class TelevisionController {
     // We importeren hier (via de constructor, maar het mag ook @Autowired zijn) nu de Service in plaats van direct de Repository.
     private final TelevisionService televisionService;
 
-    @Autowired
+
     public TelevisionController(TelevisionService televisionService){
         this.televisionService = televisionService;
     }
