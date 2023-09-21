@@ -67,4 +67,7 @@ _Let op_: het is uitdagender om jouw eigen stappenplan te maken. Mocht je niet z
 
 ## Bonus
 
-Maak een extra GetMapping die enkel de sales info van alle Televisions ophaalt. De sales info is id, price, originalStock en sold.
+Maak een extra GetMapping die enkel de sales info van alle Televisions ophaalt. 
+- Maak hier ook een bijpassende service-methode voor.
+- De sales info is {id, price, originalStock, sold}.
+- Maak hier een aparte DTO voor. 
